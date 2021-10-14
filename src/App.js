@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
 import GlobalStyle from "./styles/global";
@@ -17,6 +17,10 @@ function App() {
   const handleToggleTheme = () => {
     setTheme((prevState) => (prevState === "dark" ? "light" : "dark"));
   };
+
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme))
+  }, [theme])
 
   return (
     <ThemeProvider theme={currentTheme}>
