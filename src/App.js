@@ -15,12 +15,19 @@ function App() {
   }, [theme]);
 
   const handleToggleTheme = () => {
-    setTheme((prevState) => (prevState === "dark" ? "light" : "dark"));
+    if(theme === 'light') {
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    }
   };
 
   useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(theme))
-  }, [theme])
+    const localTheme = localStorage.getItem("theme");
+    localTheme && setTheme(localTheme);
+  }, [])
 
   return (
     <ThemeProvider theme={currentTheme}>
