@@ -26,7 +26,9 @@ function App() {
 
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
-    localTheme && setTheme(localTheme);
+    if (localTheme) {
+      setTheme(localTheme);
+    }
   }, [])
 
   return (
