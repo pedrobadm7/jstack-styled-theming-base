@@ -15,7 +15,7 @@ function App() {
   }, [theme]);
 
   const handleToggleTheme = () => {
-    if(theme === 'light') {
+    if (theme === "light") {
       localStorage.setItem("theme", "dark");
       setTheme("dark");
     } else {
@@ -29,12 +29,12 @@ function App() {
     if (localTheme) {
       setTheme(localTheme);
     }
-  }, [])
+  }, []);
 
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
-      <Layout  onToggleTheme={handleToggleTheme} selectedTheme={theme}/>
+      <Layout onToggleTheme={handleToggleTheme} selectedTheme={theme} />
     </ThemeProvider>
   );
 }
