@@ -21,11 +21,19 @@ class App extends React.Component {
     console.log("componentDidMount executed");
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log({
+      currentState: this.state,
+      prevProps,
+      prevState,
+    });
+  }
+
   render() {
     console.log("rendered");
     return (
       <>
-        <button onClick={() => this.setState({ changed: true })}>
+        <button onClick={() => this.setState({ changed: !this.state.changed })}>
           Change state
         </button>
         <ThemeContext.Consumer>
