@@ -6,11 +6,35 @@ import Header from "../Header";
 import PostsList from "../PostsList";
 import Footer from "../Footer";
 
+// export default class Layout extends React.Component {
+//   componentDidMount() {
+//     document.addEventListener("scroll", this.handleScroll);
+//   }
+
+//   componentWillUnmount() {
+//     console.log("Componente vai desmontar");
+//     document.removeEventListener("scroll", this.handleScroll);
+//   }
+
+//   handleScroll = () => {
+//     console.log("scrolled...");
+//   };
+
+//   render() {
+//     return (
+//       <>
+//         <Header />
+//         <PostsList />
+//         <Footer />
+//       </>
+//     );
+//   }
+// }
+
 export default function Layout() {
   const theme = useTheme();
   return (
     <>
-      {undefined.map((item) => item)}
       <Header />
       <PostsList />
       <Footer />
