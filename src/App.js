@@ -29,6 +29,11 @@ class App extends React.Component {
     });
   }
 
+  componentDidCatch(error, info) {
+    console.log("error: ", error);
+    console.log("info: ", info);
+  }
+
   render() {
     console.log("rendered");
     return (

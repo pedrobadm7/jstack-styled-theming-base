@@ -10,6 +10,7 @@ export default function Layout() {
   const theme = useTheme();
   return (
     <>
+      {undefined.map((item) => item)}
       <Header />
       <PostsList />
       <Footer />
