@@ -18,14 +18,22 @@ export class ThemeProvider extends React.Component {
     };
   }
 
+  componentDidUpdate(_, prevState) {
+    if (prevState.theme !== this.state.theme) {
+      localStorage.setItem("theme", JSON.stringify(this.state.theme));
+      console.log("tema mudou");
+    }
+  }
+
   handleToggleTheme = () => {
     this.setState(
       prevState => ({
         theme: prevState.theme === "dark" ? "light" : "dark"
-      }),
-      () => {
-        localStorage.setItem("theme", JSON.stringify(this.state.theme));
-      }
+      })
+      // ,
+      // () => {
+      //   localStorage.setItem("theme", JSON.stringify(this.state.theme));
+      // }
     );
   };
 
